@@ -5,12 +5,10 @@ using System.Web;
 
 namespace GiveItBack.Models
 {
-    
-
-    public class Item
+    public class User
     {
-        public string Category { get; set; }
         public string Name { get; set; }
-        public DateTime LendDate { get; set; }
+        public string Email { get; set; }
+        public int id { get; set; }
     }
 }
