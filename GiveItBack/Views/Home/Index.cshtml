@@ -1,5 +1,10 @@
-﻿<div id="wrapper" class="container-fluid">
+﻿
+
+
+
+<div id="wrapper" class="container-fluid">
     <h1>Lent Items</h1>
+    <h3>Today: @DateTime.Now.ToString("MM/dd/yyyy")</h3>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -11,27 +16,40 @@
             </tr>
         </thead>
         <tbody>
+            @{
+                for (int i = 0; i < 5; i++)
+                {
             <tr>
-                <td>1</td>
-                <td>The Hobbit</td>
-                <td>Books</td>
-                <td>12/22/19</td>
-                <td>example@email.net</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Power Drill</td>
-                <td>Tools</td>
-                <td>12/22/19</td>
-                <td>example@email.net</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Volkswagen</td>
-                <td>Car</td>
-                <td>12/22/19</td>
-                <td>example@email.net</td>
-            </tr>
+                <td>@(i+1)</td>
+                <td>Record @(i+1)</td>
+                <td>Category @(i%2 +1)</td>
+                <td>@DateTime.Now.ToString("MM/dd/yyyy")</td>
+                <td>email@email.net</td>
+            </tr>  
+                        }
+                    }
+
+            @*<tr>
+            <td>1</td>
+            <td>The Hobbit</td>
+            <td>Books</td>
+            <td>12/22/19</td>
+            <td>example@email.net</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Power Drill</td>
+            <td>Tools</td>
+            <td>12/22/19</td>
+            <td>example@email.net</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Volkswagen</td>
+            <td>Car</td>
+            <td>12/22/19</td>
+            <td>example@email.net</td>
+        </tr>*@
         </tbody>
     </table>
 
