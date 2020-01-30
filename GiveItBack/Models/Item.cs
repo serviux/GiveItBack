@@ -12,5 +12,6 @@ namespace GiveItBack.Models
         public string Category { get; set; }
         public string Name { get; set; }
         public DateTime LendDate { get; set; }
+        public User Contact { get; set; }
     }
 }
