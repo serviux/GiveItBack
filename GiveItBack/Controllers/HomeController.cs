@@ -12,6 +12,7 @@ namespace GiveItBack.Controllers
 
         public ActionResult Index()
         {
+           
             
             for(int i = 0; i < 5; i++)
             {
@@ -22,8 +23,8 @@ namespace GiveItBack.Controllers
                 item.Contact = new User { Name = "Jeff" +i, Email = $"Email{i +1}@gmail.com" };
                 items.Add(item);
             }
-            ViewBag.items = items;
-            return View(ViewBag);
+            var viewModel = new ViewModels.Home.ShowItemsViewModel(items.ToArray());
+            return View(viewModel);
         }
 
      

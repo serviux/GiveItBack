@@ -1,5 +1,5 @@
 ﻿
-
+@model GiveItBack.ViewModels.Home.ShowItemsViewModel
 
 
 <div id="wrapper" class="container-fluid">
@@ -18,39 +18,18 @@
         </thead>
         <tbody>
             @{
-                for(int i = 0; i < ViewBag.items.Count; i++)
+                var itr = Model.ItemsList.GetEnumerator();
+                while(itr.MoveNext())
                 {
             <tr>
-                <td>@ViewBag.items[i].Name</td>
-                <td>@ViewBag.items[i].Category</td>
-                <td>@ViewBag.items[i].LendDate.ToString("MM/dd/yyyy")</td>
-                <td>@ViewBag.items[i].Contact.Name</td>
-                <td>@ViewBag.items[i].Contact.Email</td>
-            </tr>  
-                        }
-                    }
-
-            @*<tr>
-            <td>1</td>
-            <td>The Hobbit</td>
-            <td>Books</td>
-            <td>12/22/19</td>
-            <td>example@email.net</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Power Drill</td>
-            <td>Tools</td>
-            <td>12/22/19</td>
-            <td>example@email.net</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Volkswagen</td>
-            <td>Car</td>
-            <td>12/22/19</td>
-            <td>example@email.net</td>
-        </tr>*@
+                <td>@itr.Current.Name</td>
+                <td>@itr.Current.Category</td>
+                <td>@itr.Current.LendDate.ToString("MM/dd/yyyy")</td>
+                <td>@itr.Current.Contact.Name</td>
+                <td>@itr.Current.Contact.Email</td>
+            </tr>
+                 }
+             }
         </tbody>
     </table>
 
